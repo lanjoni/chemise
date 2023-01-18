@@ -1,0 +1,22 @@
+name: chemisebot
+version: 0.1.0
+
+authors:
+  - João Augusto Lissoni Lanjoni <joaoaugustolanjoni@gmail.com>
+
+description: |
+  Bot para chat da Twitch escrito em Crystal. Projeto feito para fins didáticos.
+
+dependencies:
+  pg:
+    github: will/crystal-pg
+    version: "~> 0.5"
+  crirc:
+    github: Meoowww/Crirc
+    branch: master
+
+development_dependencies:
+  webmock:
+    github: manastech/webmock.cr
+
+license: MIT

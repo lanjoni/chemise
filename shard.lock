@@ -1,0 +1,18 @@
+version: 2.0
+shards:
+  crirc:
+    git: https://github.com/meoowww/crirc.git
+    version: 0.5.1+git.commit.c21010a9d9d3ef9067b5610ec4cb4ea389fdc508
+
+  db:
+    git: https://github.com/crystal-lang/crystal-db.git
+    version: 0.11.0
+
+  pg:
+    git: https://github.com/will/crystal-pg.git
+    version: 0.26.0
+
+  webmock:
+    git: https://github.com/manastech/webmock.cr.git
+    version: 0.14.0
+

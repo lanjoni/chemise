@@ -1,0 +1,9 @@
+name: crirc
+version: 0.5.1
+
+authors:
+  - Arthur Poulet <arthur.poulet@sceptique.eu>
+
+crystal: 0.34.0
+
+license: MIT
