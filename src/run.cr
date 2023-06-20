@@ -21,18 +21,18 @@ client = Crirc::Network::Client.new nick:
 
 client.connect
 
+commands = Hash(String, String).from_json(File.read("./commands/commands.json"))
+
 client.start do |bot|
     bot.on_ready do
         bot.join Chan.new("#gutolanjoni")
     end.on("PING") do |msg|
         bot.pong(msg.message)
-    end.on("PRIVMSG", message: /^!test */) do |msg|
-        test = msg.arguments if msg.arguments
-        bot.reply msg, "working! 🤖" if test
-    end.on("PRIVMSG", message: /^!chuck */) do |msg, match|
-        response = HTTP::Client.get "https://api.chucknorris.io/jokes/random"
-        chuck = JSON.parse(response.body.to_s)
-        bot.reply msg, chuck["value"].to_s unless response.body.nil?
+    end.on("PRIVMSG") do |msg|
+        commands.each do |key,value|
+            arg = msg.arguments if msg.arguments
+            bot.reply msg, value if msg.message =~ /^#{key} */
+        end
     end
 
     loop do
